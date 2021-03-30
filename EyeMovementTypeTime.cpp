@@ -56,11 +56,11 @@ vector<double> EyeMovementTypeTime::getPercent() {
 	else {
 		fixationTimePercentage = saccadeTimePercentage = unclassifiedTimePercentage = eyesNotFoundTimePercentage = 0;
 	}
-	cout << "总时间" << totalTime << endl;
-	cout << "fixationTimePercentage:" << fixationTimePercentage << endl;
-	cout << "saccadeTimePercentage:" << saccadeTimePercentage << endl;
-	cout << "unclassifiedTimePercentage:" << unclassifiedTimePercentage << endl;
-	cout << "eyesNotFoundTimePercentage:" << eyesNotFoundTimePercentage << endl;
+	//cout << "总时间" << totalTime << endl;
+	//cout << "fixationTimePercentage:" << fixationTimePercentage << endl;
+	//cout << "saccadeTimePercentage:" << saccadeTimePercentage << endl;
+	//cout << "unclassifiedTimePercentage:" << unclassifiedTimePercentage << endl;
+	//cout << "eyesNotFoundTimePercentage:" << eyesNotFoundTimePercentage << endl;
 	vector<double> res;
 	res.push_back(totalTime);
 	res.push_back(fixationTimePercentage);

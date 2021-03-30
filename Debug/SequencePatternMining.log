@@ -1,8 +1,5 @@
-﻿  EyeMovementTypeTime.cpp
-  readTSV.cpp
-d:\project-c++\sequencepatternmining\sequencepatternmining\readtsv.cpp(101): warning C4018: “<”: 有符号/无符号不匹配
-d:\project-c++\sequencepatternmining\sequencepatternmining\readtsv.cpp(149): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
-d:\project-c++\sequencepatternmining\sequencepatternmining\readtsv.cpp(176): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
-d:\project-c++\sequencepatternmining\sequencepatternmining\readtsv.cpp(184): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
-  正在生成代码...
+﻿  getSequence.cpp
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(918): warning C4018: “<”: 有符号/无符号不匹配
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(998): warning C4018: “<”: 有符号/无符号不匹配
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(931): warning C4101: “data2”: 未引用的局部变量
   SequencePatternMining.vcxproj -> D:\project-c++\SequencePatternMining\Debug\SequencePatternMining.exe
