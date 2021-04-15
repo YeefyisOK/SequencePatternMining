@@ -1,5 +1,5 @@
 ﻿  getSequence.cpp
-d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(918): warning C4018: “<”: 有符号/无符号不匹配
-d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(998): warning C4018: “<”: 有符号/无符号不匹配
-d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(931): warning C4101: “data2”: 未引用的局部变量
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(1060): warning C4018: “<”: 有符号/无符号不匹配
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(1143): warning C4018: “<”: 有符号/无符号不匹配
+d:\project-c++\sequencepatternmining\sequencepatternmining\getsequence.cpp(1077): warning C4101: “data2”: 未引用的局部变量
   SequencePatternMining.vcxproj -> D:\project-c++\SequencePatternMining\Debug\SequencePatternMining.exe
