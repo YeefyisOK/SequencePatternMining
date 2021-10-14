@@ -24,9 +24,21 @@
     <ClCompile Include="getSequence.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AOILoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="point.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EyeMovementTypeTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AOILoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

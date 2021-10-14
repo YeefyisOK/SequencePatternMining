@@ -124,12 +124,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AOILoc.cpp" />
     <ClCompile Include="EyeMovementTypeTime.cpp" />
     <ClCompile Include="getSequence.cpp" />
+    <ClCompile Include="point.cpp" />
     <ClCompile Include="readTSV.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AOILoc.h" />
     <ClInclude Include="EyeMovementTypeTime.h" />
+    <ClInclude Include="point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

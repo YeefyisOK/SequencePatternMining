@@ -3,6 +3,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include "AOILoc.h"
 #include "EyeMovementTypeTime.h"
 using namespace std;
 /*
@@ -20,15 +21,8 @@ using namespace std;
 	其它-失败;
  */
 
-struct point
-{
-	int x;
-	int y;
-	point(int a,int b) {
-		x = a;
-		y = b;
-	}
-};
+/*
+//数学中测第4题
 point diagram_LU(823, 208);
 point diagram_RB(1095, 314);
 
@@ -58,7 +52,176 @@ point stament_RB(1304, 405);
 
 point time_LU(1306, 306);
 point time_RB(1471, 411);
+*/
 
+/*
+//数学中测第3题 时间包含在Statement中了
+point diagram_LU(823, 152);
+point diagram_RB(1072, 354);
+
+point optionA_LU(889, 564);
+point optionA_RB(1005, 645);
+
+point optionB_LU(889, 653);
+point optionB_RB(1005, 735);
+
+point optionC_LU(889, 741);
+point optionC_RB(1005, 812);
+
+point optionD_LU(889, 823);
+point optionD_RB(1005, 903);
+
+point option_LU(889, 564);
+point option_RB(1005, 903);
+
+
+point stament_LU(106, 350);
+point stament_RB(1820, 466);
+
+point time_LU(1220, 399);
+point time_RB(1384, 464);
+*/
+/*
+//数学中测第2题 时间包含在Statement中了
+point diagram_LU(625, 113);
+point diagram_RB(1303, 511);
+
+point optionA_LU(718, 657);
+point optionA_RB(1213, 731);
+
+point optionB_LU(718, 738);
+point optionB_RB(1213, 812);
+
+point optionC_LU(718, 816);
+point optionC_RB(1213, 902);
+
+point optionD_LU(718, 905);
+point optionD_RB(1213, 985);
+
+point option_LU(718, 657);
+point option_RB(1213, 985);
+
+
+point stament_LU(106, 508);
+point stament_RB(1820, 630);
+
+point time_LU(1285, 567);
+point time_RB(1460, 633);
+*/
+
+/*
+//数学后测4
+point diagram_LU(834,183);
+point diagram_RB(1093,404);
+
+point optionA_LU(876,574);
+point optionA_RB(990,660);
+
+point optionB_LU(877, 667);
+point optionB_RB(989, 741);
+
+point optionC_LU(878, 746);
+point optionC_RB(987, 822);
+
+point optionD_LU(877, 831);
+point optionD_RB(991, 909);
+
+point option_LU(876, 575);
+point option_RB(991, 909);
+
+point stament_LU(318, 405);
+point stament_RB(1450, 514);
+
+point time_LU(1458, 391);
+point time_RB(1601, 514);
+*/
+/*
+//数学后测3 没图只有AB选项
+
+point diagram_LU(0,0);
+point diagram_RB(0,0);
+
+point optionC_LU(0, 0);
+point optionC_RB(0, 0);
+
+point optionD_LU(0, 0);
+point optionD_RB(0, 0);
+
+point optionA_LU(876, 593);
+point optionA_RB(1037, 685);
+
+point optionB_LU(877, 693);
+point optionB_RB(1032, 774);
+
+point option_LU(876, 593);
+point option_RB(1032, 774);
+
+point stament_LU(321, 292);
+point stament_RB(1440, 397);
+
+point time_LU(1458, 391);
+point time_RB(1601, 514);
+*/
+
+/*
+//数学后测2 没图只有AB选项
+
+point diagram_LU(0,0);
+point diagram_RB(0,0);
+
+point optionC_LU(0, 0);
+point optionC_RB(0, 0);
+
+point optionD_LU(0, 0);
+point optionD_RB(0, 0);
+
+point optionA_LU(876, 593);
+point optionA_RB(1037, 685);
+
+point optionB_LU(877, 693);
+point optionB_RB(1032, 774);
+
+point option_LU(876, 593);
+point option_RB(1032, 774);
+
+point stament_LU(345, 285);
+point stament_RB(1440, 397);
+
+point time_LU(1437, 290);
+point time_RB(1567, 395);
+*/
+
+//数学后测1 Time包含在Statement内了
+point diagram_LU(635,57);
+point diagram_RB(1265,557);
+
+point optionA_LU(833,669);
+point optionA_RB(1085,731);
+
+point optionB_LU(177, 741);
+point optionB_RB(1769, 821);
+
+point optionC_LU(177, 823);
+point optionC_RB(1769, 897);
+
+point optionD_LU(109, 903);
+point optionD_RB(1807, 1071);
+
+point option_LU(107, 681);
+point option_RB(1807, 1071);
+
+point stament_LU(105, 559);
+point stament_RB(1819, 661);
+
+point time_LU(981, 619);
+point time_RB(1111, 665);
+
+
+/*
+AOILoc a(AAOI(diagram_LU, diagram_RB), AAOI(optionA_LU, optionA_RB), AAOI(optionB_LU, optionB_RB),
+	AAOI(optionC_LU, optionC_RB), AAOI(optionD_LU, optionD_RB), AAOI(option_LU, option_RB),
+	AAOI(stament_LU, stament_RB), AAOI(time_LU, time_RB));
+*/
 vector<string> AOIs{
 	"Diagram","OptionA","OptionB","OptionC","OptionD","Statement1","Statement2","Time","Else"
 };
@@ -70,6 +233,7 @@ vector<string> AOIs2{
 vector<string> AOIs3{
 	"Diagram","Option","Statement","Time","Else"
 };
+/*
 int inWhichAOI(int x,int y) {
 	if (x >= diagram_LU.x&&x <= diagram_RB.x &&y >= diagram_LU.y&&y <= diagram_RB.y) {
 		return 0;
@@ -98,7 +262,7 @@ int inWhichAOI(int x,int y) {
 	else {
 		return 8;
 	}
-}
+}*/
 int inWhichAOI2(int x, int y) {//Statement合并
 	if (x >= diagram_LU.x&&x <= diagram_RB.x &&y >= diagram_LU.y&&y <= diagram_RB.y) {
 		return 0;
@@ -115,28 +279,28 @@ int inWhichAOI2(int x, int y) {//Statement合并
 	else if (x >= optionD_LU.x&&x <= optionD_RB.x &&y >= optionD_LU.y&&y <= optionD_RB.y) {
 		return 4;
 	}
-	else if (x >= stament_LU.x&&x <= stament_RB.x &&y >= stament_LU.y&&y <= stament_RB.y) {
-		return 5;
-	}
 	else if (x >= time_LU.x&&x <= time_RB.x &&y >= time_LU.y&&y <= time_RB.y) {
 		return 6;
+	}
+	else if (x >= stament_LU.x&&x <= stament_RB.x &&y >= stament_LU.y&&y <= stament_RB.y) {
+		return 5;
 	}
 	else {
 		return 7;
 	}
 }
-int inWhichAOI3(int x, int y) {//Statement合并
+int inWhichAOI3(int x, int y) {//option合并
 	if (x >= diagram_LU.x&&x <= diagram_RB.x &&y >= diagram_LU.y&&y <= diagram_RB.y) {
 		return 0;
 	}
 	else if (x >= option_LU.x&&x <= option_RB.x &&y >= option_LU.y&&y <= option_RB.y) {
 		return 1;
 	}
-	else if (x >= stament_LU.x&&x <= stament_RB.x &&y >= stament_LU.y&&y <= stament_RB.y) {
-		return 2;
-	}
 	else if (x >= time_LU.x&&x <= time_RB.x &&y >= time_LU.y&&y <= time_RB.y) {
 		return 3;
+	}
+	else if (x >= stament_LU.x&&x <= stament_RB.x &&y >= stament_LU.y&&y <= stament_RB.y) {
+		return 2;
 	}
 	else {
 		return 4;
@@ -1195,6 +1359,7 @@ int main()
 	system("pause");
 */
 
+/*
 	//Sequence8相比Sequence7 Option合并了
 	FILE *fp;
 	const string in_dir = "E:\\read-all\\";
@@ -1314,7 +1479,7 @@ int main()
 		int last_duration = 0;
 		stringstream ss;
 
-		vector<pair<string, pair<int, int>>> merge_res;
+		vector<pair<string, pair<int, int>>> merge_res;//AOI，次数，时间
 
 		for (int i = 0; i < res.size(); i++) {
 			string temp = res[i];
@@ -1333,6 +1498,7 @@ int main()
 
 		}
 		for (pair<string, pair<int, int>> a : merge_res) {
+			//ss << a.first << "," << a.second.first << "," << a.second.second << endl;
 			ss << a.first << "," << a.second.first << "," << a.second.second << endl;
 		}
 		//ss << "total sequence " << merge_res.size() << endl;
@@ -1344,6 +1510,120 @@ int main()
 		out_file.close();
 	}
 	system("pause");
+*/
 
 
+
+	//时间起点+AOI
+
+	//Sequence8相比Sequence7 Option合并了
+	FILE *fp;
+	string question = "hou_shu_01\\";
+	const string in_dir = "E:\\read-allquestion\\"+ question;
+	const string out_dir = "E:\\out\\user2\\"+ question;
+	vector<string> names{//correct  不分答对答错
+		"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
+		"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
+		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
+		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63"
+		//"Project63-57 Recording23",
+
+		//"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
+		//"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
+		//"Project48-39 Recording49","Project48-39 Recording55",
+		//
+		//"Project33-24 Recording17","Project33-24 Recording36",
+		//"Project33-24 Recording37","Project33-24 Recording39",
+		//"Project33-24 Recording57","Project33-24 Recording59","Project33-24 Recording65",
+		//"Project33-24 Recording66","Project33-24 Recording67",
+		//"Project33-24 Recording72",
+		//"Project22-1 Recording50",
+		//"Project22-1 Recording51",
+		//"Project22-1 Recording58","Project22-1 Recording61",
+		//"Project22-1 Recording62","Project22-1 Recording64"
+	};
+
+	//vector<string> names{//incorrect
+	//	"Project63-57 Recording30","Project48-39 Recording71","Project48-39 Recording52",
+	//	"Project33-24 Recording68","Project33-24 Recording41","Project33-24 Recording16",
+	//	"Project22-1 Recording56","Project22-1 Recording53","Project22-1 Recording42",
+	//	"Project22-1 Recording48","Project22-1 Recording54","Project22-1 Recording69"
+	//};
+
+	//vector<string> names{
+	//	"Project77-70 Recording70"
+	//};
+
+	string in_path;
+	for (int k = 0; k < names.size(); k++) {
+		in_path = in_dir + names[k] + ".tsv";
+		cout << "第" << k << "个文件路径为：" << in_path << endl;
+		vector<string> onlyRocordingName;
+		my_split(names[k], ' ', onlyRocordingName);
+		const string out_path = out_dir + onlyRocordingName[1] + ".txt";//.tsv
+		ofstream out_file(out_path, ofstream::out);
+
+		fp = fopen(in_path.c_str(), "r");//string to const char*
+		if (!fp)
+		{
+			cout << "OPEN ERROR!" << endl;
+			return 0;
+		}
+		int i = 0;
+		EyeMovementTypeTime eyeMovementTypeTime;//8 AOIs
+		vector<string> sequence;
+
+		char original_data[20000], data2[1000];
+		fgets(original_data, sizeof(original_data), fp);
+		const char * split = "\t";
+		string last_eye_movement_type = "0";
+		int start_flag = 0;
+		vector <pair<string,string> > res;//用于记录总数
+		res.push_back(make_pair("Time","Event"));
+		res.push_back(make_pair("Time", "Event"));//用来占位
+		string lastType = "-1";
+		while (fgets(original_data, sizeof(original_data), fp))
+		{
+			i++;//recode current line
+			vector<string> line;
+			//;get a line data in .tsv
+			my_split(original_data, '\t', line);
+			if (line.size() == 0) {
+				break;
+			}
+
+			//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
+			int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
+			
+			if (index == 7) {//Else不要了
+				continue;
+			}
+			if (AOIs2[index] != lastType) {
+				pair<string, string> startTime_AOI(line[0], AOIs2[index]);
+				res.push_back(startTime_AOI);
+				lastType = AOIs2[index];
+			}
+
+			if (feof(fp))
+				break;
+		}
+		stringstream ss;
+		string tab = "\t";
+		string lastTime = res[res.size()-1].first;
+		res[1].first = res[2].first;
+		res[1].second = ":";
+		res.push_back(make_pair(lastTime, "&"));//最后一行
+		for (auto a : res) {
+			//ss << a.first << "," << a.second.first << "," << a.second.second << endl;
+			ss << a.first << "\t" << a.second << endl;
+		}
+		//ss << "total sequence " << merge_res.size() << endl;
+		//cout << ss.str() << endl;
+		out_file << ss.str() << endl;
+		cout << ss.str() << endl;
+		fclose(fp);
+
+		out_file.close();
+	}
+	system("pause");
 }
