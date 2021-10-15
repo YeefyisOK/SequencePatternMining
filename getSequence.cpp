@@ -81,6 +81,7 @@ point stament_RB(1820, 466);
 point time_LU(1220, 399);
 point time_RB(1384, 464);
 */
+
 /*
 //数学中测第2题 时间包含在Statement中了
 point diagram_LU(625, 113);
@@ -101,12 +102,38 @@ point optionD_RB(1213, 985);
 point option_LU(718, 657);
 point option_RB(1213, 985);
 
-
 point stament_LU(106, 508);
 point stament_RB(1820, 630);
 
 point time_LU(1285, 567);
 point time_RB(1460, 633);
+*/
+
+/*
+//数学中测第1题 只有AB两个选项，时间包含在Statement中了
+point optionC_LU(-1, -1);
+point optionC_RB(-1, -1);
+
+point optionD_LU(-1, -1);
+point optionD_RB(-1, -1);
+
+point diagram_LU(543, 128);
+point diagram_RB(1350, 646);
+
+point optionA_LU(857, 807);
+point optionA_RB(1061, 822);
+
+point optionB_LU(857, 966);
+point optionB_RB(1061, 964);
+
+point option_LU(857, 807);
+point option_RB(1061, 964);
+
+point stament_LU(106, 644);
+point stament_RB(1819, 766);
+
+point time_LU(1199, 703);
+point time_RB(1367, 766);
 */
 
 /*
@@ -135,17 +162,17 @@ point stament_RB(1450, 514);
 point time_LU(1458, 391);
 point time_RB(1601, 514);
 */
+
 /*
 //数学后测3 没图只有AB选项
+point diagram_LU(-1,-1);
+point diagram_RB(-1, -1);
 
-point diagram_LU(0,0);
-point diagram_RB(0,0);
+point optionC_LU(-1, -1);
+point optionC_RB(-1, -1);
 
-point optionC_LU(0, 0);
-point optionC_RB(0, 0);
-
-point optionD_LU(0, 0);
-point optionD_RB(0, 0);
+point optionD_LU(-1, -1);
+point optionD_RB(-1, -1);
 
 point optionA_LU(876, 593);
 point optionA_RB(1037, 685);
@@ -165,15 +192,14 @@ point time_RB(1601, 514);
 
 /*
 //数学后测2 没图只有AB选项
+point diagram_LU(-1,-1);
+point diagram_RB(-1, -1);
 
-point diagram_LU(0,0);
-point diagram_RB(0,0);
+point optionC_LU(-1, -1);
+point optionC_RB(-1, -1);
 
-point optionC_LU(0, 0);
-point optionC_RB(0, 0);
-
-point optionD_LU(0, 0);
-point optionD_RB(0, 0);
+point optionD_LU(-1, -1);
+point optionD_RB(-1, -1);
 
 point optionA_LU(876, 593);
 point optionA_RB(1037, 685);
@@ -190,6 +216,7 @@ point stament_RB(1440, 397);
 point time_LU(1437, 290);
 point time_RB(1567, 395);
 */
+
 
 //数学后测1 Time包含在Statement内了
 point diagram_LU(635,57);
@@ -1591,17 +1618,27 @@ int main()
 			if (line.size() == 0) {
 				break;
 			}
-
-			//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
-			int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
-			
-			if (index == 7) {//Else不要了
-				continue;
+			if (line[54] == "EyesNotFound") {
+				if (lastType != "EyesNotFound") {
+					pair<string, string> startTime_eyenotfound(line[0], "EyesNotFound");
+					res.push_back(startTime_eyenotfound);
+					lastType = "EyesNotFound";
+				}
 			}
-			if (AOIs2[index] != lastType) {
-				pair<string, string> startTime_AOI(line[0], AOIs2[index]);
-				res.push_back(startTime_AOI);
-				lastType = AOIs2[index];
+			else {
+				//如果不用eyenotfound 只要else里面的
+				//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
+				int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
+				//空字符串是0，0
+				if (index == 7) {//Else不要了,不只是Else,还有一些Event信息
+					continue;
+				}
+				if (AOIs2[index] != lastType) {
+					pair<string, string> startTime_AOI(line[0], AOIs2[index]);
+					res.push_back(startTime_AOI);
+					lastType = AOIs2[index];
+				}
+
 			}
 
 			if (feof(fp))
