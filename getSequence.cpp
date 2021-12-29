@@ -21,7 +21,7 @@ using namespace std;
 	其它-失败;
  */
 
-/*
+
 //数学中测第4题
 point diagram_LU(823, 208);
 point diagram_RB(1095, 314);
@@ -52,7 +52,7 @@ point stament_RB(1304, 405);
 
 point time_LU(1306, 306);
 point time_RB(1471, 411);
-*/
+
 
 /*
 //数学中测第3题 时间包含在Statement中了
@@ -217,7 +217,7 @@ point time_LU(1437, 290);
 point time_RB(1567, 395);
 */
 
-
+/*
 //数学后测1 Time包含在Statement内了
 point diagram_LU(635,57);
 point diagram_RB(1265,557);
@@ -242,7 +242,7 @@ point stament_RB(1819, 661);
 
 point time_LU(981, 619);
 point time_RB(1111, 665);
-
+*/
 
 /*
 AOILoc a(AAOI(diagram_LU, diagram_RB), AAOI(optionA_LU, optionA_RB), AAOI(optionB_LU, optionB_RB),
@@ -1545,15 +1545,16 @@ int main()
 
 	//Sequence8相比Sequence7 Option合并了
 	FILE *fp;
-	string question = "hou_shu_01\\";
+	string question = "mid_shu_04\\";
 	const string in_dir = "E:\\read-allquestion\\"+ question;
 	const string out_dir = "E:\\out\\user2\\"+ question;
+
 	vector<string> names{//correct  不分答对答错
 		"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
 		"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
-		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
+		"Project63-57 Recording24","Project63-57 Recording28",
 		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63"
-		//"Project63-57 Recording23",
+		//"Project63-57 Recording23","Project63-57 Recording23",
 
 		//"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
 		//"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
@@ -1618,14 +1619,16 @@ int main()
 			if (line.size() == 0) {
 				break;
 			}
+			/*
+			//如果用eyenotfound需要if这一句
 			if (line[54] == "EyesNotFound") {
 				if (lastType != "EyesNotFound") {
 					pair<string, string> startTime_eyenotfound(line[0], "EyesNotFound");
 					res.push_back(startTime_eyenotfound);
 					lastType = "EyesNotFound";
 				}
-			}
-			else {
+			}*/
+			//else {
 				//如果不用eyenotfound 只要else里面的
 				//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
 				int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
@@ -1639,7 +1642,7 @@ int main()
 					lastType = AOIs2[index];
 				}
 
-			}
+			//}
 
 			if (feof(fp))
 				break;
