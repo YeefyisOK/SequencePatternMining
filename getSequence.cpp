@@ -21,7 +21,7 @@ using namespace std;
 	其它-失败;
  */
 
-
+vector<string> indexAOI{ "diagram","optionA","optionB","optionC","optionD","statement","time" };
 //数学中测第4题
 point diagram_LU(823, 208);
 point diagram_RB(1095, 314);
@@ -1545,14 +1545,14 @@ int main()
 
 	//Sequence8相比Sequence7 Option合并了
 	FILE *fp;
-	string question = "mid_shu_04\\";
-	const string in_dir = "E:\\read-allquestion\\"+ question;
-	const string out_dir = "E:\\out\\user2\\"+ question;
+	string question = "hou_shu_01\\";
+	const string in_dir = "E:\\read-allquestion\\timestamp-AOI\\"+ question;
+	const string out_dir = "E:\\out\\GMMHMMres\\"+ question;
 
 	vector<string> names{//correct  不分答对答错
 		"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
 		"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
-		"Project63-57 Recording24","Project63-57 Recording28",
+		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
 		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63"
 		//"Project63-57 Recording23","Project63-57 Recording23",
 
@@ -1584,11 +1584,11 @@ int main()
 
 	string in_path;
 	for (int k = 0; k < names.size(); k++) {
-		in_path = in_dir + names[k] + ".tsv";
+		in_path = in_dir + names[k] + ".txt";
 		cout << "第" << k << "个文件路径为：" << in_path << endl;
 		vector<string> onlyRocordingName;
 		my_split(names[k], ' ', onlyRocordingName);
-		const string out_path = out_dir + onlyRocordingName[1] + ".txt";//.tsv
+		const string out_path = out_dir + onlyRocordingName[1] + "new.txt";//.tsv
 		ofstream out_file(out_path, ofstream::out);
 
 		fp = fopen(in_path.c_str(), "r");//string to const char*
@@ -1609,13 +1609,13 @@ int main()
 		vector <pair<string,string> > res;//用于记录总数
 		res.push_back(make_pair("Time","Event"));
 		res.push_back(make_pair("Time", "Event"));//用来占位
-		string lastType = "-1";
+		int lastType = -1;
 		while (fgets(original_data, sizeof(original_data), fp))
 		{
 			i++;//recode current line
 			vector<string> line;
 			//;get a line data in .tsv
-			my_split(original_data, '\t', line);
+			my_split(original_data, ',', line);
 			if (line.size() == 0) {
 				break;
 			}
@@ -1631,17 +1631,23 @@ int main()
 			//else {
 				//如果不用eyenotfound 只要else里面的
 				//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
-				int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
-				//空字符串是0，0
-				if (index == 7) {//Else不要了,不只是Else,还有一些Event信息
-					continue;
-				}
-				if (AOIs2[index] != lastType) {
-					pair<string, string> startTime_AOI(line[0], AOIs2[index]);
-					res.push_back(startTime_AOI);
-					lastType = AOIs2[index];
-				}
+				//int index = inWhichAOI2(atoi(line[26].c_str()), atoi(line[27].c_str()));//Gaze point X Gaze point Y
+				////空字符串是0，0
+				//if (index == 7) {//Else不要了,不只是Else,还有一些Event信息
+				//	continue;
+				//}
+				//if (AOIs2[index] != lastType) {
+				//	pair<string, string> startTime_AOI(line[0], AOIs2[index]);
+				//	res.push_back(startTime_AOI);
+				//	lastType = AOIs2[index];
+				//}
 
+				int index = stoi(line[1]);
+				if (index != lastType) {
+					pair<string, string> startTime_AOI(line[0], indexAOI[index]);
+					res.push_back(startTime_AOI);
+					lastType = index;
+				}
 			//}
 
 			if (feof(fp))
