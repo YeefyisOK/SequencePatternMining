@@ -1539,8 +1539,6 @@ int main()
 	system("pause");
 */
 
-
-
 	//时间起点+AOI
 
 	//Sequence8相比Sequence7 Option合并了
@@ -1553,8 +1551,12 @@ int main()
 		"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
 		"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
 		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
-		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63"
+		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63",
 		//"Project63-57 Recording23","Project63-57 Recording23",
+		"Project48-39 Recording19","Project48-39 Recording34","Project48-39 Recording45",
+		 "Project48-39 Recording47","Project48-39 Recording52","Project48-39 Recording71",
+		 "Project77_56-49 Recording20","Project77_56-49 Recording27","Project77_56-49 Recording33",
+		 "Project77_56-49 Recording35"
 
 		//"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
 		//"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
@@ -1590,7 +1592,7 @@ int main()
 		my_split(names[k], ' ', onlyRocordingName);
 		const string out_path = out_dir + onlyRocordingName[1] + "new.txt";//.tsv
 		ofstream out_file(out_path, ofstream::out);
-
+		cout << "路径名称正确" << endl;
 		fp = fopen(in_path.c_str(), "r");//string to const char*
 		if (!fp)
 		{
@@ -1599,7 +1601,7 @@ int main()
 		}
 		int i = 0;
 		EyeMovementTypeTime eyeMovementTypeTime;//8 AOIs
-		vector<string> sequence;
+		//vector<string> sequence;
 
 		char original_data[20000], data2[1000];
 		fgets(original_data, sizeof(original_data), fp);
@@ -1616,6 +1618,7 @@ int main()
 			vector<string> line;
 			//;get a line data in .tsv
 			my_split(original_data, ',', line);
+
 			if (line.size() == 0) {
 				break;
 			}
@@ -1652,6 +1655,10 @@ int main()
 
 			if (feof(fp))
 				break;
+		}
+		if (res.size() == 2) {
+			//这个文件是空的
+			continue;
 		}
 		stringstream ss;
 		string tab = "\t";
