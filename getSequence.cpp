@@ -1,4 +1,6 @@
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -21,7 +23,9 @@ using namespace std;
 	其它-失败;
  */
 
-vector<string> indexAOI{ "diagram","optionA","optionB","optionC","optionD","statement","time" };
+
+vector<string> indexAOI{ "diagram","optionA","optionB","optionC","optionD","statement","time","else" };
+//vector<string> indexAOI{ "diagram","optionA","optionB","optionC","optionD","time","s1","s2","s3","s4","s5","s6","s7","else" };
 //数学中测第4题
 point diagram_LU(823, 208);
 point diagram_RB(1095, 314);
@@ -376,6 +380,16 @@ int my_split(const string& src, const char& delim,
 	return 0;
 }
 
+string lltos(long long l)
+{
+	ostringstream os;
+	os << l;
+	string result;
+	istringstream is(os.str());
+	is >> result;
+	return result;
+
+}
 int main()
 {
 /*
@@ -1543,7 +1557,15 @@ int main()
 
 	//Sequence8相比Sequence7 Option合并了
 	FILE *fp;
-	string question = "hou_shu_01\\";
+
+	vector<string> questionVec;
+	questionVec.push_back("hou_shu_01");
+	questionVec.push_back("hou_shu_04");
+	questionVec.push_back("mid_shu_02");
+	questionVec.push_back("mid_shu_03");
+	questionVec.push_back("mid_shu_04");
+
+	string question = questionVec[4] + "\\";
 	const string in_dir = "E:\\read-allquestion\\timestamp-AOI\\"+ question;
 	const string out_dir = "E:\\out\\GMMHMMres\\"+ question;
 
@@ -1583,14 +1605,14 @@ int main()
 	//vector<string> names{
 	//	"Project77-70 Recording70"
 	//};
-
+	stringstream everyPeopleSumTime;
 	string in_path;
 	for (int k = 0; k < names.size(); k++) {
 		in_path = in_dir + names[k] + ".txt";
 		cout << "第" << k << "个文件路径为：" << in_path << endl;
 		vector<string> onlyRocordingName;
 		my_split(names[k], ' ', onlyRocordingName);
-		const string out_path = out_dir + onlyRocordingName[1] + "new.txt";//.tsv
+		const string out_path = out_dir + onlyRocordingName[1] + "new.txt";//.tsv   .csv  .txt
 		ofstream out_file(out_path, ofstream::out);
 		cout << "路径名称正确" << endl;
 		fp = fopen(in_path.c_str(), "r");//string to const char*
@@ -1668,7 +1690,7 @@ int main()
 		res.push_back(make_pair(lastTime, "&"));//最后一行
 		for (auto a : res) {
 			//ss << a.first << "," << a.second.first << "," << a.second.second << endl;
-			ss << a.first << "\t" << a.second << endl;
+			ss << a.first << "\t" << a.second << endl;//  \t   ,
 		}
 		//ss << "total sequence " << merge_res.size() << endl;
 		//cout << ss.str() << endl;
@@ -1676,7 +1698,18 @@ int main()
 		cout << ss.str() << endl;
 		fclose(fp);
 
+		long long sumTime = strtoll(lastTime.c_str(), NULL, 10) - strtoll(res[1].first.c_str(), NULL, 10);
+		//cout << sumTime;
+		everyPeopleSumTime << names[k] << "," << sumTime << endl;
 		out_file.close();
 	}
+	////计算总时间这个没用了，用readTSV计算总时间了
+	//cout << question << endl;
+	//cout << "everyPeopleSumTime" << endl;
+	//cout << everyPeopleSumTime.str() << endl;
+
+	//const string out_path = out_dir + "SumTime.csv";//.tsv
+	//ofstream out_file(out_path, ofstream::out);
+	//out_file << everyPeopleSumTime.str() << endl;
 	system("pause");
 }

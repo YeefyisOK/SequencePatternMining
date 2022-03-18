@@ -1,4 +1,4 @@
-//
+////统计原始数据的跟丢率，总时长等
 //#include <iostream>
 //#include <sstream>
 //#include <fstream>
@@ -65,33 +65,53 @@
 //int main()
 //{
 //	FILE *fp;
-//	const string in_dir = "E:\\read-all\\";
-//	const string out_dir = "E:\\out";
-//	const string out_path = out_dir + "\\FourTypePercent10.csv";
-//	
+//
+//	vector<string> questionVec;
+//	questionVec.push_back("hou_shu_01");
+//	questionVec.push_back("hou_shu_04");
+//	questionVec.push_back("mid_shu_02");
+//	questionVec.push_back("mid_shu_03");
+//	questionVec.push_back("mid_shu_04");
+//
+//	string question = questionVec[4] + "\\";
+//
+//	const string in_dir = "E:\\read-allquestion\\" + question + "\\";
+//	const string out_dir = "E:\\out\\sum\\";
+//	const string out_path = out_dir + question + "\\FourTypePercent10.csv";
+//	cout << "outPath" << endl;
+//	cout << out_path << endl;
 //	ofstream out_file(out_path, ofstream::out);
 //	string line="Recording,fixationTime,saccadeTime,unclassifiedTime,eyesNotFoundTime,totalTime,fixationTimePercentage,saccadeTimePercentage,unclassifiedTimePercentage,eyesNotFoundTimePercentage ";
 //	out_file << line << endl;
 //	vector<string> names{
+//		//"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
+//		//"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
+//		//"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
+//		//"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63",
+//		//"Project77_56-49 Recording20","Project77_56-49 Recording27","Project77_56-49 Recording33",
+//		//"Project77_56-49 Recording35","Project77_56-49 Recording38",
+//		//"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
+//		//"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
+//		//"Project48-39 Recording49","Project48-39 Recording52","Project48-39 Recording55",
+//		//"Project48-39 Recording71",
+//		//"Project33-24 Recording16","Project33-24 Recording17","Project33-24 Recording36",
+//		//"Project33-24 Recording37","Project33-24 Recording39","Project33-24 Recording41",
+//		//"Project33-24 Recording57","Project33-24 Recording59","Project33-24 Recording65",
+//		//"Project33-24 Recording66","Project33-24 Recording67","Project33-24 Recording68",
+//		//"Project33-24 Recording72",
+//		//"Project22-1 Recording42","Project22-1 Recording48","Project22-1 Recording50",
+//		//"Project22-1 Recording51","Project22-1 Recording53","Project22-1 Recording54",
+//		//"Project22-1 Recording56","Project22-1 Recording58","Project22-1 Recording61",
+//		//"Project22-1 Recording62","Project22-1 Recording64","Project22-1 Recording69"
 //		"Project77-70 Recording18","Project77-70 Recording25","Project77-70 Recording26",
 //		"Project77-70 Recording31","Project77-70 Recording46","Project77-70 Recording70",
 //		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
 //		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63",
-//		"Project77_56-49 Recording20","Project77_56-49 Recording27","Project77_56-49 Recording33",
-//		"Project77_56-49 Recording35","Project77_56-49 Recording38",
-//		"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
-//		"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
-//		"Project48-39 Recording49","Project48-39 Recording52","Project48-39 Recording55",
-//		"Project48-39 Recording71",
-//		"Project33-24 Recording16","Project33-24 Recording17","Project33-24 Recording36",
-//		"Project33-24 Recording37","Project33-24 Recording39","Project33-24 Recording41",
-//		"Project33-24 Recording57","Project33-24 Recording59","Project33-24 Recording65",
-//		"Project33-24 Recording66","Project33-24 Recording67","Project33-24 Recording68",
-//		"Project33-24 Recording72",
-//		"Project22-1 Recording42","Project22-1 Recording48","Project22-1 Recording50",
-//		"Project22-1 Recording51","Project22-1 Recording53","Project22-1 Recording54",
-//		"Project22-1 Recording56","Project22-1 Recording58","Project22-1 Recording61",
-//		"Project22-1 Recording62","Project22-1 Recording64","Project22-1 Recording69"
+//		//"Project63-57 Recording23","Project63-57 Recording23",
+//		"Project48-39 Recording19","Project48-39 Recording34","Project48-39 Recording45",
+//		 "Project48-39 Recording47","Project48-39 Recording52","Project48-39 Recording71",
+//		 "Project77_56-49 Recording20","Project77_56-49 Recording27","Project77_56-49 Recording33",
+//		 "Project77_56-49 Recording35"
 //	};
 //	//vector<string> names{
 //	//	"Project48-39 Recording29"
