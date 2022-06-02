@@ -1543,7 +1543,7 @@ int main()
 
 	//Sequence8相比Sequence7 Option合并了
 	FILE *fp;
-	string question = "hou_shu_01\\";
+	string question = "hou_phy_04\\";
 	const string in_dir = "E:\\read-allquestion\\timestamp-AOI\\"+ question;
 	const string out_dir = "E:\\out\\GMMHMMres\\"+ question;
 
@@ -1553,10 +1553,12 @@ int main()
 		"Project63-57 Recording23","Project63-57 Recording24","Project63-57 Recording28",
 		"Project63-57 Recording30","Project63-57 Recording32","Project63-57 Recording63",
 		//"Project63-57 Recording23","Project63-57 Recording23",
-		"Project48-39 Recording19","Project48-39 Recording34","Project48-39 Recording45",
+		"Project48-39 Recording34","Project48-39 Recording45",
 		 "Project48-39 Recording47","Project48-39 Recording52","Project48-39 Recording71",
-		 "Project77_56-49 Recording20","Project77_56-49 Recording27","Project77_56-49 Recording33",
+		 "Project77_56-49 Recording27",
 		 "Project77_56-49 Recording35"
+
+		 //"Project48-39 Recording19","Project77_56-49 Recording20","Project77_56-49 Recording33",
 
 		//"Project48-39 Recording19","Project48-39 Recording29","Project48-39 Recording34",
 		//"Project48-39 Recording40","Project48-39 Recording45","Project48-39 Recording47",
